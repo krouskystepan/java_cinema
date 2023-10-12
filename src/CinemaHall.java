@@ -4,7 +4,7 @@ import java.util.List;
 /**
  * Represents a cinema hall with seating arrangements and films.
  */
-public class CinemaHall{
+public class CinemaHall {
     private int hallNumber;
     private int rowCount;
     private int seatsPerRow;
@@ -77,6 +77,13 @@ public class CinemaHall{
      * Display the seating arrangement for the cinema hall.
      */
     public void drawSeatingArrangement() {
-        // ... (method implementation)
+        System.out.println("Rozložení křesel pro sál č. " + hallNumber + ":");
+        for (int row = 1; row <= rowCount; row++) {
+            for (int seat = 1; seat <= seatsPerRow; seat++) {
+                char seatLetter = (char) ('A' + seat - 1);
+                System.out.print(seatLetter + String.format("%02d", row) + " ");
+            }
+            System.out.println();
+        }
     }
 }
